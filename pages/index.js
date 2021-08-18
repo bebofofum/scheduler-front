@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
 export default function Home({ streamData }) {
@@ -14,6 +15,8 @@ export default function Home({ streamData }) {
             <div className="">{Description}</div>
          </div>
       ))}
+      {/* Testing How Next does page Links */}
+      <h2>See <Link href="/streams/first-stream"><a>First Stream</a></Link></h2>
      
     </div>
   )
@@ -26,6 +29,8 @@ export async function getStaticProps() {
   const getStreamsRes = await fetch("http://localhost:1337/streams");
 
   const streamData = await getStreamsRes.json();
+
+  console.log(streamData)
 
 
   return {
