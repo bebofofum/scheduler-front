@@ -2,21 +2,34 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
-  console.log("i am on the client")
+export default function Home({ streamData }) {
 
 
   return (
-    <div className=" ">Welcome screen</div>
+    <div>
+      {/* perform a function to iterate through streams and show details */}
+      {streamData && streamData.map(({ id, Name, Description }) => (
+         <div className=" " key={id}>
+            <h1>{Name}</h1>
+            <div className="">{Description}</div>
+         </div>
+      ))}
+     
+    </div>
   )
 }
 
 export async function getStaticProps() {
 
-  console.log("i am on the server");
+  //get content from strapi
+
+  const getStreamsRes = await fetch("http://localhost:1337/streams");
+
+  const streamData = await getStreamsRes.json();
+
 
   return {
-    props: {},
+    props: { streamData },
   }
 }
 
