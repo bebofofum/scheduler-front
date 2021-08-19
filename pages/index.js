@@ -16,7 +16,11 @@ export default function Home({ streamData }) {
          </div>
       ))}
       {/* Testing How Next does page Links */}
-      <h2>See <Link href="/streams/first-stream"><a>First Stream</a></Link></h2>
+      <h2>See{' '}
+        <Link href="/streams/first-stream">
+          <a>First Stream</a>
+        </Link>
+      </h2>
      
     </div>
   )
