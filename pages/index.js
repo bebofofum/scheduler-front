@@ -8,20 +8,28 @@ export default function Home({ streamData }) {
 
   return (
     <div>
-      {/* perform a function to iterate through streams and show details */}
-      {streamData && streamData.map(({ id, Name, Description }) => (
-         <div className=" " key={id}>
-            <h1>{Name}</h1>
-            <div className="">{Description}</div>
-         </div>
-      ))}
-      {/* Testing How Next does page Links */}
-      <h2>See{' '}
-        <Link href="/streams/first-stream">
-          <a>First Stream</a>
-        </Link>
-      </h2>
-     
+      <nav className="navigation">
+        <div className="navigation-type">
+          <p>Login</p>
+          <p>Logout</p>
+        </div>
+      </nav>
+      <div className="stream-home-list">
+        {/* perform a function to iterate through streams and show details */}
+        {streamData && streamData.map(({ id, Name, Description }) => (
+          <div className=" " key={id}>
+              <h1>{Name}</h1>
+              <div className="">{Description}</div>
+          </div>
+        ))}
+        {/* Testing How Next does page Links */}
+        <h2>See{' '}
+          <Link href="/streams/first-stream">
+            <a>First Stream</a>
+          </Link>
+        </h2>
+      
+      </div>
     </div>
   )
 }
