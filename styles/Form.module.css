@@ -1,0 +1,24 @@
+.form-box{
+    min-width: 100%;
+    height: 100vh;
+    border: solid #f55A00 1vw;
+    margin: 0vw;
+    padding: 5vw;
+    position: relative;
+}
+
+.container{
+    width: 80%;
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container * {
+    box-sizing: border-box;
+  }
+
+.form-box > h5{
+    font-size: 35px;
+}
+  
